@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+			th:replace="~{fragments/layout :: layout (~{::body})}">
+	  <head>
+  	    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  	    <title>Java Star Ship</title>
+  	  </head>
+	  <body>
+	    <div th:object="${ship}">
+  	      <h1 class = "blue-header" th:text="*{name}">Ship Name</h1>
+				<p th:text="'Fuel capacity: ' + ${ship.status()} + ' '+ *{fuelCapacity} + ' Teraliters'">Capacity</p>
+  	    </div>
+	    <a href="/starships">Back to index page</a>
+	  </body>
+	</html>
